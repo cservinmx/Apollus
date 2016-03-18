@@ -1,0 +1,29 @@
+CREATE DATABASE `apollus` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci */;
+
+
+CREATE TABLE `cat_type_profile` (
+  `idctp` int(11) NOT NULL AUTO_INCREMENT,
+  `ctp_name` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `ctp_timestamp` int(11) DEFAULT NULL,
+  `ctp_status` tinyint(1) DEFAULT NULL,
+  `ctp_idlastedit` smallint(3) DEFAULT NULL,
+  PRIMARY KEY (`idctp`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+CREATE TABLE `user` (
+  `iduser` smallint(4) NOT NULL AUTO_INCREMENT,
+  `ctp_idctp` smallint(3) DEFAULT NULL,
+  `u_name` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `u_user` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `u_mail` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `u_pass` varchar(60) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `u_idlastedit` tinyint(4) DEFAULT NULL,
+  `u_time_register` int(11) DEFAULT NULL,
+  `u_timestamp` int(11) DEFAULT NULL,
+  `u_status` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`iduser`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+INSERT INTO user (ctp_idctp, u_name, u_user, u_mail, u_pass, u_idlastedit, u_time_register, u_timestamp, u_status) VALUES (1,'Admin', 'admin','your@mail.com', '4297f44b13955235245b2497399d7a93', '1', '1458338524', '1458338524', 1)
